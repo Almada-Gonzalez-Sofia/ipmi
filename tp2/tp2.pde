@@ -1,7 +1,7 @@
 
 String estado;
 int animacion,tam,esquinaX1,esquinaY1,ancho,alto,opa;
-PImage portada,personajes,screen,portales;
+PImage portada,personajes,screen,scouts;
 String texto,texto2,texto3,texto4;
 PFont fuenteUno,fuentetres,fuentecuatro;
 
@@ -24,7 +24,7 @@ void setup() {
   
   
 //tercera imagen
-  portales=loadImage("scouts.jpg");
+  scouts=loadImage("scouts.jpg");
   texto4="A lo largo de la serie, Usagi conoce a otras guerreras: Sailor Mercury, Sailor Mars, Sailor Jupiter y Sailor Venus. Juntas forman las Sailor Scouts, un equipo que combate enemigos y busca proteger el Cristal de Plata, un poderoso objeto mágico relacionado con el antiguo Reino Lunar..";
   fuentetres=loadFont("Franklin.vlw");
   opa=1;
@@ -65,7 +65,7 @@ void draw() {
 }
 //tercer imagen
   else if (estado == "info"){
-  image(portales,0,0);
+  image(scouts,0,0);
   fill(255,0,opa);
   textFont(fuentetres);
   text(texto4,10,36);
