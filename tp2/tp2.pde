@@ -1,4 +1,4 @@
-//Martina Fuhr,comision2,119031/9
+
 String estado;
 int animacion,tam,esquinaX1,esquinaY1,ancho,alto,opa;
 PImage portada,personajes,screen,portales;
@@ -8,31 +8,30 @@ PFont fuenteUno,fuentetres,fuentecuatro;
 void setup() {
   size(640,480);
   estado = "menu";
-esquinaX1 = 17;
-esquinaY1 = 45;
-ancho = 200;
-alto = 100;
+  esquinaX1 = 17;
+  esquinaY1 = 45;
+  ancho = 200;
+  alto = 100;
 
-  
-  //primera imagen
+//primera imagen
   portada=loadImage("sailormoon.jpg");
- texto="Sailor Moon es una serie animada japonesa basada en el manga de Naoko Takeuchi.";
- fuenteUno = loadFont("Franklin.vlw");
+  texto="Sailor Moon es una serie animada japonesa basada\n en el manga de Naoko Takeuchi.";
+  fuenteUno = loadFont("Franklin.vlw");
  
- //segunda imagen
- personajes=loadImage("luna.jpg");
- texto2="Desarrollado por \nValve Corporation, fue\n lanzado\n el 19 de Abril, en 2011,\n para Steam.Actualmente \n cuesta $5.79 USD\n o $5148,57 pesos.";
+//segunda imagen
+  personajes=loadImage("luna.jpg");
+  texto2="cuenta la historia de Usagi Tsukino, una adolescente común que descubre que en realidad es Sailor Moon, una guerrera mágica destinada a proteger la Tierra. Con ayuda de Luna, una gata mágica, comienza a luchar contra fuerzas malignas mientras intenta llevar una vida normal.";
   
   
-  //tercera imagen
+//tercera imagen
   portales=loadImage("scouts.jpg");
-  texto4="En el modo cooperativo para dos \njugadores tiene su propia campaña\n totalmente independiente,\n con una historia única,\n salas de pruebas y dos nuevos\n personajes con los que\n podremos jugar.";
+  texto4="A lo largo de la serie, Usagi conoce a otras guerreras: Sailor Mercury, Sailor Mars, Sailor Jupiter y Sailor Venus. Juntas forman las Sailor Scouts, un equipo que combate enemigos y busca proteger el Cristal de Plata, un poderoso objeto mágico relacionado con el antiguo Reino Lunar..";
   fuentetres=loadFont("Franklin.vlw");
   opa=1;
   
-  //cuarta imagen
-screen=loadImage("amiguis.jpg");
-  texto3="Y en el modo de un jugador de Portal 2 conoceremos a un\n nuevo elenco de personajes, gran cantidad de innovadores\n puzles y un número mucho mayor de enrevesadas salas\n de pruebas.";
+//cuarta imagen
+  screen=loadImage("amiguis.jpg");
+  texto3="La serie mezcla acción, fantasía, romance y comedia. Usagi descubre que es la reencarnación de la Princesa Serenity y desarrolla una relación con Tuxedo Mask, un misterioso héroe que la ayuda en las batallas.Uno de los temas principales es la amistad, el amor y el trabajo en equipo.";
   fuentecuatro= loadFont("gothic.vlw");
   tam =1;
 
@@ -40,40 +39,40 @@ screen=loadImage("amiguis.jpg");
 }
 
 void draw() {
- println(mouseX,mouseY);
+  println(mouseX,mouseY);
   animacion=frameCount/2;
   background(0);
   
-  //primera imagen
+//primera imagen
   if ( estado.equals("menu")){
- image(portada,0,0);
+  image(portada,0,0);
  
- textFont(fuenteUno);
- textSize(22);
+  textFont(fuenteUno);
+  textSize(22);
   text(texto,14,animacion);
   
   if (frameCount/60 >= 10 )
   estado = "juego";
-  }
-  //segunda imagen
+}
+//segunda imagen
   else if (estado == "juego"){
-    image(personajes,-10,0);
+  image(personajes,-10,0);
   fill (random(255),0,random(255));
   text(texto2,338,27);
   
   if (frameCount/60 >= 20 )
   estado = "info";
-  }
-  //tercer imagen
+}
+//tercer imagen
   else if (estado == "info"){
-    image(portales,0,0);
-    fill(255,0,opa);
-    textFont(fuentetres);
-    text(texto4,10,36);
+  image(portales,0,0);
+  fill(255,0,opa);
+  textFont(fuentetres);
+  text(texto4,10,36);
     
-     if( opa <= 255 ){  
-    opa += 1;
-    }
+  if( opa <= 255 ){  
+   opa += 1;
+}
    
 if (frameCount/60 >= 30 )
   estado = "gameplay";
