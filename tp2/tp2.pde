@@ -19,18 +19,18 @@ void setup() {
  
 //segunda imagen
   personajes=loadImage("luna.jpg");
-  texto2="cuenta la historia de Usagi Tsukino, una adolescente común que descubre que en realidad es Sailor Moon, una guerrera mágica destinada a proteger la Tierra. Con ayuda de Luna, una gata mágica, comienza a luchar contra fuerzas malignas mientras intenta llevar una vida normal.";
+  texto2="Cuenta la historia de Usagi Tsukino (Serena), una adolescente\n común que descubre que en realidad es Sailor Moon,\n una guerrera mágica destinada a proteger la Tierra.\n Con ayuda de Luna, una gata mágica, comienza a\n luchar contra fuerzas malignas mientras intenta\n llevar una vida normal.";
   
   
 //tercera imagen
   scouts=loadImage("scouts.jpg");
-  texto4="A lo largo de la serie, Usagi conoce a otras guerreras: Sailor Mercury, Sailor Mars, Sailor Jupiter y Sailor Venus. Juntas forman las Sailor Scouts, un equipo que combate enemigos y busca proteger el Cristal de Plata, un poderoso objeto mágico relacionado con el antiguo Reino Lunar..";
+  texto4="A lo largo de la serie, Usagi conoce a otras guerreras: \n Sailor Mercury,\n Sailor Mars,\n Sailor Jupiter\n y Sailor Venus.\n Juntas forman las Sailor Scouts, un equipo que combate enemigos\n y busca proteger el Cristal de Plata, un poderoso objeto mágico\n relacionado con el antiguo Reino Lunar..";
   fuentetres=loadFont("Franklin.vlw");
   opa=1;
   
 //cuarta imagen
   screen=loadImage("amiguis.jpg");
-  texto3="La serie mezcla acción, fantasía, romance y comedia. Usagi descubre que es la reencarnación de la Princesa Serenity y desarrolla una relación con Tuxedo Mask, un misterioso héroe que la ayuda en las batallas.Uno de los temas principales es la amistad, el amor y el trabajo en equipo.";
+  texto3="La serie mezcla acción, fantasía, romance y comedia.\n Usagi descubre que es la reencarnación de la\n Princesa Serenity y desarrolla una relación con Tuxedo Mask,\n un misterioso héroe que la ayuda en las batallas.\n Uno de los temas principales es la amistad, el amor y el trabajo\n en equipo.";
   fuentecuatro= loadFont("gothic.vlw");
   tam =1;
 
@@ -48,7 +48,7 @@ void draw() {
  
   textFont(fuenteUno);
   textSize(22);
-  text(texto,14,animacion);
+  text(texto,80,animacion);
   
   if (frameCount/60 >= 10 )
   estado = "anime";
@@ -57,7 +57,7 @@ void draw() {
   else if (estado == "anime"){
   image(personajes,-10,0);
   fill (random(255),0,random(255));
-  text(texto2,338,27);
+  text(texto2,70,35);
   
   if (frameCount/60 >= 20 )
   estado = "info";
@@ -65,9 +65,10 @@ void draw() {
 //tercer imagen
   else if (estado == "info"){
   image(scouts,0,0);
-  fill(255,0,opa);
+  fill(100,0,opa);
+  textSize(50);
   textFont(fuentetres);
-  text(texto4,10,36);
+  text(texto4,25,36);
     
   if( opa <= 255 ){  
    opa += 1;
@@ -79,10 +80,10 @@ void draw() {
 //cuarta imagen
   else if (estado == "gameplay"){
   image(screen,10,50);
-  fill(255,0,0);
+  fill(0,0,0);
   textFont(fuentecuatro);
   textSize(tam);
-  text(texto3,106,412);
+  text(texto3,90,300);
     
   if( tam <= 16 ){  
   tam += 1;
@@ -113,6 +114,12 @@ void draw() {
       }
     }
 
+
+
+
+
+
+    
 
 
 
