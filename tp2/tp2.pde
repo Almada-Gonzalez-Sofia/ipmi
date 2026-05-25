@@ -1,4 +1,3 @@
-
 String estado;
 int animacion,tam,esquinaX1,esquinaY1,ancho,alto,opa;
 PImage portada,personajes,screen,scouts;
@@ -52,10 +51,10 @@ void draw() {
   text(texto,14,animacion);
   
   if (frameCount/60 >= 10 )
-  estado = "juego";
+  estado = "anime";
 }
 //segunda imagen
-  else if (estado == "juego"){
+  else if (estado == "anime"){
   image(personajes,-10,0);
   fill (random(255),0,random(255));
   text(texto2,338,27);
@@ -74,41 +73,41 @@ void draw() {
    opa += 1;
 }
    
-if (frameCount/60 >= 30 )
+  if (frameCount/60 >= 30 )
   estado = "gameplay";
 }
-  //cuarta imagen
-else if (estado == "gameplay"){
-    image(screen,10,50);
-    fill(255,0,0);
-    textFont(fuentecuatro);
-    textSize(tam);
-    text(texto3,106,412);
+//cuarta imagen
+  else if (estado == "gameplay"){
+  image(screen,10,50);
+  fill(255,0,0);
+  textFont(fuentecuatro);
+  textSize(tam);
+  text(texto3,106,412);
     
-    if( tam <= 16 ){  
-    tam += 1;
-    }
+  if( tam <= 16 ){  
+  tam += 1;
+}
     
-    rect (esquinaX1, esquinaY1, ancho, alto);
-    fill(255);
-    textSize(27);
-    text("Reiniciar",68,108);
+  rect (esquinaX1, esquinaY1, ancho, alto);
+  fill(255);
+  textSize(27);
+  text("Reiniciar",68,108);
     
 }
 }
-    void mousePressed(){
+  void mousePressed(){
       
       
-         //boton
-         if(estado=="gameplay"){
+//boton
+  if(estado=="gameplay"){
 
-      if (mouseX > esquinaX1 && mouseX < esquinaX1+ancho && mouseY > esquinaY1 && mouseY < esquinaY1+alto){
-        estado = "menu";
-        println("se presiono el boton");
-        frameCount = 0;
-        tam=1;
-        opa=1;
-      }
+  if (mouseX > esquinaX1 && mouseX < esquinaX1+ancho && mouseY > esquinaY1 && mouseY < esquinaY1+alto){
+  estado = "menu";
+  println("se presiono el boton");
+  frameCount = 0;
+  tam=1;
+  opa=1;
+}
         
         
       }
