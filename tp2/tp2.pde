@@ -1,6 +1,6 @@
 String estado;
 int animacion,tam,esquinaX1,esquinaY1,ancho,alto,opa;
-PImage portada,historia,screen,scouts;
+PImage portada,historia,amigos,scouts;
 String texto,texto2,texto3,texto4;
 PFont fuenteUno,fuentetres,fuentecuatro;
 
@@ -29,7 +29,7 @@ void setup() {
   opa=1;
   
 //cuarta imagen
-  screen=loadImage("amiguis.jpg");
+  amigos=loadImage("tuxedo.jpg");
   texto3="La serie mezcla acción, fantasía, romance y comedia.\n Usagi descubre que es la reencarnación de la\n Princesa Serenity y desarrolla una relación con Tuxedo Mask,\n un misterioso héroe que la ayuda en las batallas.\n Uno de los temas principales es la amistad, el amor y el trabajo\n en equipo.";
   fuentecuatro= loadFont("gothic.vlw");
   tam =1;
@@ -79,8 +79,8 @@ void draw() {
 }
 //cuarta imagen
   else if (estado == "sailor"){
-  image(screen,10,50);
-  fill(0,0,0);
+  image(amigos,0,0);
+  fill(255);
   textFont(fuentecuatro);
   textSize(tam);
   text(texto3,90,300);
@@ -88,7 +88,7 @@ void draw() {
   if( tam <= 16 ){  
   tam += 1;
 }
-    
+  fill(232,112,218);
   rect (esquinaX1, esquinaY1, ancho, alto);
   fill(255);
   textSize(27);
@@ -128,6 +128,10 @@ void draw() {
     
 
 
+
+
+
+    
 
 
 
