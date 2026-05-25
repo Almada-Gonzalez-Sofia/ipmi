@@ -1,12 +1,12 @@
 String estado;
 int animacion,tam,esquinaX1,esquinaY1,ancho,alto,opa;
-PImage portada,personajes,screen,scouts;
+PImage portada,historia,screen,scouts;
 String texto,texto2,texto3,texto4;
 PFont fuenteUno,fuentetres,fuentecuatro;
 
 void setup() {
   size(640,480);
-  estado = "menu";
+  estado = "inicio";
   esquinaX1 = 17;
   esquinaY1 = 45;
   ancho = 200;
@@ -18,13 +18,13 @@ void setup() {
   fuenteUno = loadFont("Franklin.vlw");
  
 //segunda imagen
-  personajes=loadImage("luna.jpg");
+  historia=loadImage("luna.jpg");
   texto2="Cuenta la historia de Usagi Tsukino (Serena), una adolescente\n común que descubre que en realidad es Sailor Moon,\n una guerrera mágica destinada a proteger la Tierra.\n Con ayuda de Luna, una gata mágica, comienza a\n luchar contra fuerzas malignas mientras intenta\n llevar una vida normal.";
   
   
 //tercera imagen
   scouts=loadImage("scouts.jpg");
-  texto4="A lo largo de la serie, Usagi conoce a otras guerreras: \n Sailor Mercury,\n Sailor Mars,\n Sailor Jupiter\n y Sailor Venus.\n Juntas forman las Sailor Scouts, un equipo que combate enemigos\n y busca proteger el Cristal de Plata, un poderoso objeto mágico\n relacionado con el antiguo Reino Lunar..";
+  texto4="A lo largo de la serie, Usagi conoce a otras guerreras: \n Sailor Mercury,\n Sailor Mars,\n Sailor Jupiter\n y Sailor Venus.\n Juntas forman las Sailor Scouts, un equipo que combate\n enemigos y busca proteger el Cristal de Plata, un poderoso\n objeto mágico relacionado con el antiguo\n Reino Lunar..";
   fuentetres=loadFont("Franklin.vlw");
   opa=1;
   
@@ -43,7 +43,7 @@ void draw() {
   background(0);
   
 //primera imagen
-  if ( estado.equals("menu")){
+  if ( estado.equals("inicio")){
   image(portada,0,0);
  
   textFont(fuenteUno);
@@ -55,7 +55,7 @@ void draw() {
 }
 //segunda imagen
   else if (estado == "anime"){
-  image(personajes,-10,0);
+  image(historia,-10,0);
   fill (random(255),0,random(255));
   text(texto2,70,35);
   
@@ -75,10 +75,10 @@ void draw() {
 }
    
   if (frameCount/60 >= 30 )
-  estado = "gameplay";
+  estado = "sailor";
 }
 //cuarta imagen
-  else if (estado == "gameplay"){
+  else if (estado == "sailor"){
   image(screen,10,50);
   fill(0,0,0);
   textFont(fuentecuatro);
@@ -100,10 +100,10 @@ void draw() {
       
       
 //boton
-  if(estado=="gameplay"){
+  if(estado=="sailor"){
 
   if (mouseX > esquinaX1 && mouseX < esquinaX1+ancho && mouseY > esquinaY1 && mouseY < esquinaY1+alto){
-  estado = "menu";
+  estado = "inicio";
   println("se presiono el boton");
   frameCount = 0;
   tam=1;
@@ -116,6 +116,22 @@ void draw() {
 
 
 
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
 
 
 
