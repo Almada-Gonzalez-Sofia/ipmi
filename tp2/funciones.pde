@@ -56,7 +56,7 @@ void sailor() {
 
 // quinta imagen
 void pantallaFinal() {
-  image(fin, 0 , 0); 
+  image(fin, 0 , 1); 
   fill(255);
   textSize(21);
   text(texto5, 80, 210);
