@@ -1,7 +1,7 @@
 String estado;
 int animacion,tam,esquinaX1,esquinaY1,ancho,alto,opa;
-PImage portada,historia,amigos,scouts;
-String texto,texto2,texto3,texto4;
+PImage portada,historia,amigos,scouts,fin;
+String texto,texto2,texto3,texto4, texto5;
 PFont fuenteUno,fuentetres,fuentecuatro;
 
 void setup() {
@@ -34,7 +34,10 @@ void setup() {
   fuentecuatro= loadFont("gothic.vlw");
   tam =1;
 //quinta imagen
-
+  fin=loadImage("magicgirl.jpg");
+  texto5="Sailor Moon se convirtio en\n uno de los animes mas\n famosos del mundo y ayudo a popularizar el genero\n MagicGirl.\n Su estetica, personajes\n y transformaciones marcaron la cultura pop \n y estos siguen siendo muy influyentes\n hasta el dia de hoy.";
+  fuentecuatro= loadFont("gothic.vlw");
+  tam =1;
 
 }
 
@@ -43,7 +46,7 @@ void draw() {
   animacion=frameCount/2;
   background(0);
   
-  // TODOS deben usar .equals()
+  //todos conm .equals()
   if (estado ==("inicio")) {
     inicio();
   } 
@@ -60,18 +63,6 @@ void draw() {
     pantallaFinal(); 
   }
 }
-
-      
-
-
-
-
-
-
-
-    
-
-
 
 
 
