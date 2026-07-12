@@ -53,22 +53,23 @@ void sailor() {
     estado = "pantallaFinal";
   }
 }
+
 // quinta imagen
 void pantallaFinal() {
-  //agregar otra foto
+  image(fin, 0 , 0); 
   fill(255);
-  textSize(40);
-  text("Fin de la presentación", 120, 200);
+  textSize(21);
+  text(texto5, 80, 210);
   
-  //mismo botón para poder reiniciar
+  //boton
   fill(232,112,218);
   rect(esquinaX1, esquinaY1, ancho, alto);
   fill(255);
-  textSize(27);
-  text("Volver al Inicio", 30, 108);
+  textSize(30);
+  text("Reiniciar", 60, 108);
 }
+
 void mousePressed() {
-  // Usar .equals() en lugar de == porq no funciono
   if(estado==("pantallaFinal")){
 
     if (mouseX > esquinaX1 && mouseX < esquinaX1+ancho && mouseY > esquinaY1 && mouseY < esquinaY1+alto){
@@ -79,4 +80,3 @@ void mousePressed() {
       opa=1;
     }
   }
-} 
