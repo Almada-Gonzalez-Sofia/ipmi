@@ -22,7 +22,7 @@ void dibujarIlusion(color col, float angCortas, float giro) {
       line(-10, 0, 10, 0); 
       popMatrix();
     }
-    contador++; //suma una raya diagonal al contador para repetir el ciclo for y crear la siguiente diagonal con sus rayitas cortas correspondientes
+    contador++; //suma una raya diagonal al contador para repetir el ciclo for y crear la siguiente diagonal con sus rayitas cortas correspondientess
   }
   
   popMatrix();
