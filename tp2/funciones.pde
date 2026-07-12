@@ -48,19 +48,19 @@ void sailor() {
     tam += 1;
   }
   
-  // ¡AQUÍ ESTÁ EL CAMBIO! Le damos 10 segundos más (hasta 40)
+ 
   if (frameCount/60 >= 40 ) {
     estado = "pantallaFinal";
   }
 }
 // quinta imagen
 void pantallaFinal() {
-  // Puedes agregar un image() aquí si quieres cargar otra foto
+  //agregar otra foto
   fill(255);
   textSize(40);
   text("Fin de la presentación", 120, 200);
   
-  // Dibujamos el mismo botón para poder reiniciar
+  //mismo botón para poder reiniciar
   fill(232,112,218);
   rect(esquinaX1, esquinaY1, ancho, alto);
   fill(255);
@@ -68,7 +68,7 @@ void pantallaFinal() {
   text("Volver al Inicio", 30, 108);
 }
 void mousePressed() {
-  // Usamos .equals() en lugar de ==
+  // Usar .equals() en lugar de == porq no funciono
   if(estado==("pantallaFinal")){
 
     if (mouseX > esquinaX1 && mouseX < esquinaX1+ancho && mouseY > esquinaY1 && mouseY < esquinaY1+alto){
@@ -79,4 +79,4 @@ void mousePressed() {
       opa=1;
     }
   }
-} // ¡Faltaba esta llave para cerrar la función!
+} 
