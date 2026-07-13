@@ -1,3 +1,5 @@
+//https://youtu.be/8jzyoWwDXp0
+//Almada Sofia, Com4
 PImage obra27;
 color col;
 float angCortas;
